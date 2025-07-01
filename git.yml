@@ -1,0 +1,17 @@
+---
+- name: installing git and maven
+  hosts: all
+  become: yes
+  vars:
+    a: git
+    b: maven
+  tasks:
+    - name: installing git
+      yum:
+        name: git
+        state: present
+
+    - name: installing maven
+      yum:
+        name: maven
+        state: present
