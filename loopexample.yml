@@ -1,0 +1,16 @@
+---
+- name: loop
+  hosts: all
+  become: yes
+  tasks:
+    - name: installing softwares
+      yum:
+        name: " {{ item }}"
+        state: present
+      loop:
+        - git
+        - docker
+        - maven
+        - tree
+        - httpd
+
