@@ -1,0 +1,9 @@
+---
+- name: creating user and setting passsword
+  hosts: all
+  become: yes
+  tasks:
+    - name: creating user
+      user:
+        name: username
+        password: --------------
