@@ -1,0 +1,12 @@
+---
+- name: conditions in playbook
+  hosts: all
+  become: yes
+  tasks:
+    - name: installing apache on redhat
+      yum: name=httpd state=present
+      when: ansible_os_family == "RedHat"
+
+    - name: installing apache on ubuntu
+      apt: name=apache2 state=present
+      when: ansible_os_family == "Debian"
