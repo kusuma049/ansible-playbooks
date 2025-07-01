@@ -1,0 +1,9 @@
+---
+- name: copying files
+  hosts: all
+  become: yes
+  tasks:
+    - name: copying file
+      copy:
+        src: file.txt
+        dest: /home/ec2-user
